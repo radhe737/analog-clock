@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color:white;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black;
+}
+.container{
+    position: relative;
+}
+/* circle banane ke liye */
+.clock {
+    width :300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: rgba(255, 255,255, 0.1);
+    background-color: rgba(255, 255,255, 0.3);
+    box-shadow: 0px 0px 30px rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* this is responsible for to cneter the point of watch */
+
+ }
+.clock span{
+    position: absolute;
+    transform: rotate(calc(30deg * var(--i)));
+    /* total degree in cirlce 360/12(how many numbers are there = 12) */
+    inset: 12px;   
+     /* this is responsible for rotation */
+    text-align: center;
+}
+.clock span b{
+    transform:rotate(calc(-30deg * var(--i)));
+    /* (-30deg * var(--i) -> this is responnsible to inline the digit in arranged way as you can see the digit in clock in better way */
+    display: inline-block;
+    font-size:20px ;
+}
+/* desiging clock center point */
+.clock::before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: white;
+}
+.hand{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.hand i{
+    position: absolute;
+    background-color: var(--clr);
+    width: 4px;
+    height: 70px;
+    border-radius: 8px;
+
+}
